@@ -1,5 +1,6 @@
-# SQL-Query-samples
+# Included concepts:
 This repository showcases advanced SQL queries and concepts applied during my exploration of database systems, inspired by the # **Big Data Energy(BDE)** course by **JessramosData**. 
+
 Topics included:
 1. Join
 2. Case Statements
