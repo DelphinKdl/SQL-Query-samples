@@ -12,4 +12,4 @@ Topics included:
 8.  Optimization: Enhancing query performance through indexing and execution plan analysis.
 9. Views and Temporary Tables: Structuring reusable and temporary query outputs for scalable data operations.
 
-This repository serves as a snapshot of my SQL expertise, focusing on practical applications in big data systems and real-world scenarios.
+This repository serves as a snapshot of my SQL expertise, focusing on practical applications in Data Model and real-world scenarios.
