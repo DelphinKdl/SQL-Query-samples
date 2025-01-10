@@ -1,5 +1,5 @@
 # Included concepts:
-This repository showcases advanced SQL queries and concepts applied during my exploration of database systems, inspired by the # **Big Data Energy(BDE)** course by **JessramosData**. 
+This repository showcases advanced SQL queries and concepts applied during my exploration of database systems, inspired by the # **Big Data Energy(BDE)** course by **JessramosData** and work on some case studies. 
 
 Topics included:
 1. Join
