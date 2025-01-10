@@ -150,7 +150,7 @@ JOIN
 -- 1.11 oin Multiple Tables
 -- Using your subscriptions and products table join, bring in the customer_name field from the customers table.
 
- SELECT
+SELECT
     subscription_id,
     subs.product_id as products_id_subs,
     prod.product_id as product_id_prod,
@@ -167,4 +167,3 @@ JOIN
     CUSTOMERS cust
     ON subs.customer_id = cust.customer_id
 
-    
