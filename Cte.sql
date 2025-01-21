@@ -79,3 +79,35 @@ group by
     1
 order by
     1 desc
+--- 5: Using CTEs for Separate Steps
+-- Case Study: Targeting Current Customers for Product Feedback
+-- The product team is looking for customers to reach out to for feature feedback, and they've determined business requirements for the customers they want to invest time into speaking with. It's up to the Analytics team to not only pull an accurate list of customers that is aligned with the product team's business requirements, but to also present the data in an easy-to-understand way for non-technical stakeholders so they can use the list with ease. Think about what columns and fields would likely be useful for them to know going into the product conversations based on the requirement and what fields should not be included in order to be concise and reduce clutter in the final deliverable.
+
+-- Make a list of customers who have purchased more than 1 subscription. Also include all user point of contact emails in the users table for that company along with the company_name from the customers table. Clean up the list in a way where non-technical stakeholders can easily get the information they need. 
+WITH repeat_customers as(
+    select
+        customer_id,
+        count(*) as num_subs
+    from 
+        subscriptions
+group by 
+    1
+having 
+    num_subs >1
+)           
+select 
+    repeat.customer_id,
+    cust.customer_name,
+    listagg(email,'; ') as POC_email
+
+
+from 
+    repeat_customers repeat
+join 
+    users u
+    on repeat.customer_id = u.customer_id
+join
+    customers cust
+    on u.customer_id=cust.customer_id
+group by
+    1,2
