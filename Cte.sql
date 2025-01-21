@@ -55,3 +55,27 @@ select
     perc_75-perc_25 as IQR
 from 
     month_revenue
+-- 4. Find the distribution of email link clicks per user. How many users clicked the link once, 
+-- twice, 3 times and so on. You'll need event_id = 5 form the frontend_event_log table. 
+-- You can also view the frontend event definitions in the frontend_events table as well although
+--  it's not needed to answer this question.
+with email_link_clicks as (
+  SELECT
+    user_id,
+    count(*) as num_email_clicks
+FROM
+    frontend_event_log
+where 
+    event_id = 5
+group by
+    1  
+)
+select
+    num_email_clicks,
+    count(user_id) as num_users
+from 
+    email_link_clicks
+group by 
+    1
+order by
+    1 desc
